@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-ru="К содержимому" data-en="Skip to content">К содержимому</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -25,20 +25,32 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-            <span class="brand-sub">Pharmaceutical elegance • Health &amp; Wellness</span>
+            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
+              Фармацевтическая элегантность
+            </span>
           </span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary">
-          <a href="index.html">Главная</a>
-          <a href="products.html" class="active">Продукты</a>
-          <a href="blog.html">Блог</a>
-          <a href="about.html">Обо мне</a>
-          <a href="contact.html">Контакты</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
 
         <div class="header-cta">
-          <a class="btn btn-primary" href="products.html#hand-milk">Вернуться в продукты</a>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
         </div>
       </div>
     </header>
@@ -61,29 +73,31 @@
 
           <div class="founder-copy">
             <div class="section-head">
-              <h1>Молочко для рук с ламинарией</h1>
-              <p class="muted">24/7 hydration • heals cracks • protects against cold</p>
+              <h1 data-ru="Молочко для рук с ламинарией" data-en="Hand Milk with Laminaria">Молочко для рук с ламинарией</h1>
+              <p class="muted" data-ru="Увлажнение 24/7 • заживляет трещины • защищает от холода" data-en="24/7 hydration • heals cracks • protects against cold">
+                Увлажнение 24/7 • заживляет трещины • защищает от холода
+              </p>
             </div>
 
-            <p class="body-text">
+            <p class="body-text" data-ru="Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой/трескучей кожи, особенно зимой в горах. Хватает на 72 часа и никакой липкости вначале — это бомба!" data-en="24/7 hydration with cellular laminaria juice and oils. For dry/cracked skin, especially in winter. Lasts 72 hours and no initial stickiness — a game changer.">
               Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой/трескучей кожи, особенно зимой в горах 
               Хватает на 72 часа и никакой липкости вначале - это бомба! 
             </p>
 
             <div class="philosophy" id="usage">
-              <h3>How to use</h3>
+              <h3 data-ru="Как использовать" data-en="How to use">Как использовать</h3>
               <ul class="checklist">
-                <li>Apply a small amount to clean, dry hands.</li>
-                <li>Massage gently until fully absorbed, focusing on dry areas.</li>
-                <li>Use throughout the day whenever your hands need a soft reset.</li>
+                <li data-ru="Нанесите небольшое количество на чистые сухие руки." data-en="Apply a small amount to clean, dry hands.">Нанесите небольшое количество на чистые сухие руки.</li>
+                <li data-ru="Мягко вмассируйте до полного впитывания, уделяя внимание сухим зонам." data-en="Massage gently until fully absorbed, focusing on dry areas.">Мягко вмассируйте до полного впитывания, уделяя внимание сухим зонам.</li>
+                <li data-ru="Используйте в течение дня по мере необходимости." data-en="Use throughout the day whenever your hands need a soft reset.">Используйте в течение дня по мере необходимости.</li>
               </ul>
             </div>
 
             <div class="product-row" style="margin-top: 18px;">
-              <span class="price">₽1 690</span>
+              <span class="price" data-ru="₽1 690" data-en="₽1 690">₽1 690</span>
               <div class="product-actions">
-                <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer">Купить на Wildberries</a>
-                <a class="btn btn-small btn-ghost" href="products.html#hand-milk">Назад</a>
+                <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
+                <a class="btn btn-small btn-ghost" href="products.html#hand-milk" data-ru="Назад" data-en="Back">Назад</a>
               </div>
             </div>
           </div>
@@ -95,17 +109,21 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small">Premium health &amp; wellness by a female pharmacist/entrepreneur.</p>
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
+            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
-          <a href="index.html">Home</a>
-          <a href="products.html" class="active">Products</a>
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
 

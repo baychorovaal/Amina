@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-ru="К содержимому" data-en="Skip to content">К содержимому</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -25,20 +25,32 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-            <span class="brand-sub">Pharmaceutical elegance • Health &amp; Wellness</span>
+            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
+              Фармацевтическая элегантность
+            </span>
           </span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary">
-          <a href="index.html">Главная</a>
-          <a href="products.html">Продукты</a>
-          <a href="blog.html">Блог</a>
-          <a href="about.html">Обо мне</a>
-          <a href="contact.html" class="active">Контакты</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" class="active" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
 
         <div class="header-cta">
-          <a class="btn btn-primary" href="https://www.wildberries.ru/seller/250045490">Перейти в магазин</a>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
         </div>
       </div>
     </header>
@@ -47,12 +59,14 @@
       <section class="section hero" aria-label="Contact hero">
         <div class="container">
           <div class="section-head">
-            <h1>Contact / Контакты &amp; Delivery</h1>
-            <p class="muted">Minimal, readable, premium support for your questions.</p>
+            <h1 data-ru="Контакты & Доставка" data-en="Contact & Delivery">Контакты &amp; Доставка</h1>
+            <p class="muted" data-ru="Минималистичная форма для вопросов и доставки." data-en="Minimal, readable support for questions and delivery.">
+              Минималистичная форма для вопросов и доставки.
+            </p>
           </div>
-          <p class="body-text">
-            Send a message below (placeholder form). Later you can connect it to email, a CRM, or a
-            backend. Delivery details can be updated when you finalize logistics.
+          <p class="body-text" data-ru="Отправьте сообщение через форму ниже (плейсхолдер). Позже можно подключить email, CRM или backend. Детали доставки легко заменить." data-en="Send a message below (placeholder form). Later you can connect email, a CRM, or a backend. Delivery details can be updated anytime.">
+            Отправьте сообщение через форму ниже (плейсхолдер). Позже можно подключить email,
+            CRM или backend. Детали доставки легко заменить.
           </p>
         </div>
       </section>
@@ -61,26 +75,28 @@
         <div class="container about-grid">
           <div>
             <div class="section-head">
-              <h2>Message</h2>
-              <p class="muted">We usually reply within 24–48 hours (placeholder).</p>
+              <h2 data-ru="Сообщение" data-en="Message">Сообщение</h2>
+              <p class="muted" data-ru="Обычно отвечаем в течение 24–48 часов (плейсхолдер)." data-en="We usually reply within 24–48 hours (placeholder).">
+                Обычно отвечаем в течение 24–48 часов (плейсхолдер).
+              </p>
             </div>
 
             <form class="form" action="#" method="post">
               <div class="field">
-                <label for="name">Name / Имя</label>
-                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+                <label for="name" data-ru="Имя" data-en="Name">Имя</label>
+                <input id="name" name="name" type="text" placeholder="Ваше имя" data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" autocomplete="name" />
               </div>
               <div class="field">
-                <label for="email">Email</label>
+                <label for="email" data-ru="Email" data-en="Email">Email</label>
                 <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
               </div>
               <div class="field">
-                <label for="message">Message / Сообщение</label>
-                <textarea id="message" name="message" placeholder="Your question…"></textarea>
+                <label for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
+                <textarea id="message" name="message" placeholder="Ваш вопрос…" data-ru-placeholder="Ваш вопрос…" data-en-placeholder="Your question…"></textarea>
               </div>
               <div class="hero-actions">
-                <button class="btn btn-primary" type="submit">Send</button>
-                <a class="btn btn-ghost" href="products.html">View products</a>
+                <button class="btn btn-primary" type="submit" data-ru="Отправить" data-en="Send">Отправить</button>
+                <a class="btn btn-ghost" href="products.html" data-ru="Смотреть продукты" data-en="View products">Смотреть продукты</a>
               </div>
             </form>
           </div>
@@ -88,18 +104,20 @@
           <aside class="about-aside" aria-label="Delivery information">
             <div class="frame-inner">
               <div class="section-head">
-                <h2>Delivery / Доставка</h2>
-                <p class="muted small">Replace placeholders with your real policy.</p>
+                <h2 data-ru="Доставка" data-en="Delivery">Доставка</h2>
+                <p class="muted small" data-ru="Плейсхолдеры — замените вашей политикой." data-en="Placeholders — replace with your real policy.">
+                  Плейсхолдеры — замените вашей политикой.
+                </p>
               </div>
               <ul class="checklist">
-                <li>Marketplace: Wildberries (primary)</li>
-                <li>Shipping: according to marketplace rules</li>
-                <li>Returns: per marketplace policy</li>
-                <li>Support: via Instagram DM or this form</li>
+                <li data-ru="Маркетплейс: Wildberries (основной)" data-en="Marketplace: Wildberries (primary)">Маркетплейс: Wildberries (основной)</li>
+                <li data-ru="Доставка: по правилам маркетплейса" data-en="Shipping: according to marketplace rules">Доставка: по правилам маркетплейса</li>
+                <li data-ru="Возвраты: по политике маркетплейса" data-en="Returns: per marketplace policy">Возвраты: по политике маркетплейса</li>
+                <li data-ru="Поддержка: через Instagram или форму" data-en="Support: via Instagram DM or this form">Поддержка: через Instagram или форму</li>
               </ul>
               <div class="hero-actions" style="margin-top: 14px;">
-                <a class="btn btn-primary" href="https://wildberries.ru" target="_blank" rel="noreferrer">Go to Wildberries</a>
-                <a class="btn btn-ghost" href="https://instagram.com/your_account" target="_blank" rel="noreferrer">Instagram</a>
+                <a class="btn btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Перейти в Wildberries" data-en="Go to Wildberries">Перейти в Wildberries</a>
+                <a class="btn btn-ghost" href="https://instagram.com/your_account" target="_blank" rel="noreferrer" data-ru="Instagram" data-en="Instagram">Instagram</a>
               </div>
             </div>
           </aside>
@@ -111,17 +129,21 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small">Premium health &amp; wellness by a female pharmacist/entrepreneur.</p>
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
+            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-          <a href="contact.html" class="active">Contact</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" class="active" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
 

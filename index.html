@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-ru="К содержимому" data-en="Skip to content">К содержимому</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -25,20 +25,32 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-           
+            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
+              Фармацевтическая элегантность
+            </span>
           </span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary">
-          <a href="index.html" class="active">Главная</a>
-          <a href="products.html">Продукты</a>
-          <a href="blog.html">Блог</a>
-          <a href="about.html">Обо мне</a>
-          <a href="contact.html">Контакты</a>
+          <a href="index.html" class="active" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
 
         <div class="header-cta">
-          <a class="btn btn-primary" href="https://www.wildberries.ru/seller/250045490">Перейти в магазин</a>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
         </div>
       </div>
     </header>
@@ -48,42 +60,57 @@
       <section class="hero" id="home" aria-label="Homepage">
         <div class="container hero-grid">
           <div class="hero-copy">
-            
             <h1>LEDIPROVIZOR</h1>
-            <p class="lead">Фармацевтическая элегантность нового класса</p>
-            <div class="hero-actions">
-              
-            </div>
+            <p class="lead" data-ru="Фармацевтическая элегантность нового класса" data-en="Pharmaceutical elegance of a new class">
+              Фармацевтическая элегантность нового класса
+            </p>
             <div class="hero-highlights" role="list">
               <div class="highlight" role="listitem">
-                <span class="highlight-title">Здоровье изнутри и снаружи</span>
-                <span class="highlight-desc">Energy + skin care in one premium line.</span>
+                <span class="highlight-title" data-ru="Здоровье изнутри и снаружи" data-en="Health inside and out">
+                  Здоровье изнутри и снаружи
+                </span>
+                <span class="highlight-desc" data-ru="Липосомальное железо для энергии и молочко для рук для идеальной кожи" data-en="Liposomal Iron for energy and Hand Milk for perfect skin">
+                  Липосомальное железо для энергии и молочко для рук для идеальной кожи
+                </span>
               </div>
               <div class="highlight" role="listitem">
-                <span class="highlight-title">Real results</span>
-                <span class="highlight-desc">Iron without side effects • Hand milk for dry skin.</span>
+                <span class="highlight-title" data-ru="Реальные результаты" data-en="Real results">
+                  Реальные результаты
+                </span>
+                <span class="highlight-desc" data-ru="Железо без побочных эффектов • молочко для сухой кожи" data-en="Iron without side effects • Hand milk for dry skin">
+                  Железо без побочных эффектов • молочко для сухой кожи
+                </span>
               </div>
               <div class="highlight" role="listitem">
-                <span class="highlight-title">Pharmacist-led</span>
-                <span class="highlight-desc">Expertise, integrity, and modern formulation.</span>
+                <span class="highlight-title" data-ru="Фармацевтический подход" data-en="Pharmacist-led">
+                  Фармацевтический подход
+                </span>
+                <span class="highlight-desc" data-ru="Экспертиза, честность и современные формулы" data-en="Expertise, integrity, and modern formulation">
+                  Экспертиза, честность и современные формулы
+                </span>
               </div>
             </div>
           </div>
 
           <div class="hero-visual" aria-label="Featured product banners">
             <div class="banner-card frame">
-              <div class="banner-tag">Professional photo (placeholder)</div>
+              <div class="banner-tag" data-ru="Профессиональное фото (плейсхолдер)" data-en="Professional photo (placeholder)">
+                Профессиональное фото (плейсхолдер)
+              </div>
               <img
                 class="banner-img"
                 alt="Professional photo on black background with gold frame (placeholder)"
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='760' viewBox='0 0 1200 760'><defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23070708'/><stop offset='1' stop-color='%23101014'/></linearGradient><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f0dcaa'/><stop offset='1' stop-color='%23cdaa6b'/></linearGradient></defs><rect width='1200' height='760' rx='56' fill='url(%23bg)'/><rect x='70' y='70' width='1060' height='620' rx='48' fill='none' stroke='url(%23g)' stroke-width='8'/><circle cx='340' cy='320' r='110' fill='%23ffffff' opacity='0.06'/><circle cx='420' cy='310' r='80' fill='%23cdaa6b' opacity='0.10'/><rect x='180' y='520' width='520' height='18' rx='9' fill='%23ffffff' opacity='0.10'/><rect x='180' y='552' width='420' height='18' rx='9' fill='%23ffffff' opacity='0.08'/><text x='180' y='485' font-family='Cinzel, Georgia' font-size='36' fill='%23f0dcaa'>Founder photo placeholder</text><text x='180' y='610' font-family='Fraunces, Georgia' font-size='18' fill='%23bfb6a6'>Replace with a real professional portrait on black background</text></svg>"
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='760' viewBox='0 0 1200 760'><defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23070708'/><stop offset='1' stop-color='%23101014'/></linearGradient><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f0dcaa'/><stop offset='1' stop-color='%23cdaa6b'/></linearGradient></defs><rect width='1200' height='760' rx='56' fill='url(%23bg)'/><rect x='70' y='70' width='1060' height='620' rx='48' fill='none' stroke='url(%23g)' stroke-width='8'/><circle cx='340' cy='320' r='110' fill='%23ffffff' opacity='0.06'/><circle cx='420' cy='310' r='80' fill='%23cdaa6b' opacity='0.10'/><rect x='180' y='520' width='520' height='18' rx='9' fill='%23ffffff' opacity='0.10'/><rect x='180' y='552' width='420' height='18' rx='9' fill='%23ffffff' opacity='0.08'/><text x='180' y='485' font-family='Cinzel, Georgia' font-size='36' fill='%23f0dcaa'>Портрет (плейсхолдер)</text><text x='180' y='610' font-family='Fraunces, Georgia' font-size='18' fill='%23bfb6a6'>Замените на профессиональное фото на чёрном фоне</text></svg>"
               />
               <div class="banner-meta">
                 <div>
-                  <p class="banner-title">Health inside and out</p>
-                  <p class="banner-sub">Liposomal Iron for energy and Hand Milk for perfect skin</p>
+                  <p class="banner-title" data-ru="Здоровье изнутри и снаружи" data-en="Health inside and out">
+                    Здоровье изнутри и снаружи
+                  </p>
+                  <p class="banner-sub" data-ru="Липосомальное железо для энергии и молочко для рук для идеальной кожи" data-en="Liposomal Iron for energy and Hand Milk for perfect skin">
+                    Липосомальное железо для энергии и молочко для рук для идеальной кожи
+                  </p>
                 </div>
-                <a class="btn btn-small btn-primary" href="products.html">Go to store</a>
               </div>
             </div>
 
@@ -92,11 +119,13 @@
                 <img
                   class="mini-img"
                   alt="Vitamin D3K2 product photo"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='450' viewBox='0 0 700 450'><defs><linearGradient id='g2' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23eaf6f2'/><stop offset='1' stop-color='%23fff6ef'/></linearGradient></defs><rect width='700' height='450' rx='34' fill='url(%23g2)'/><circle cx='120' cy='100' r='70' fill='%23ffd9c8' opacity='0.6'/><rect x='235' y='85' width='230' height='300' rx='32' fill='%23ffffff' opacity='0.96'/><text x='270' y='185' font-family='Inter, Arial' font-size='24' fill='%231d2a2a'>Vitamin</text><text x='270' y='230' font-family='Inter, Arial' font-size='40' font-weight='700' fill='%231d2a2a'>D3K2</text><rect x='270' y='265' width='160' height='14' rx='7' fill='%23f3efe8'/><rect x='270' y='290' width='130' height='14' rx='7' fill='%23f3efe8'/></svg>"
+                  src="iron.jpg"
                 />
                 <div class="mini-meta">
-                  <p class="mini-title">Liposomal Iron</p>
-                  <p class="mini-sub">Energy • Hemoglobin • Ferritin</p>
+                  <p class="mini-title" data-ru="Липосомальное железо" data-en="Liposomal Iron">Липосомальное железо</p>
+                  <p class="mini-sub" data-ru="Энергия • Гемоглобин • Ферритин" data-en="Energy • Hemoglobin • Ferritin">
+                    Энергия • Гемоглобин • Ферритин
+                  </p>
                 </div>
               </div>
 
@@ -104,11 +133,15 @@
                 <img
                   class="mini-img"
                   alt="Hand Milk with Laminaria product photo"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='450' viewBox='0 0 700 450'><defs><linearGradient id='g3' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23fff1f6'/><stop offset='1' stop-color='%23e8f6f1'/></linearGradient></defs><rect width='700' height='450' rx='34' fill='url(%23g3)'/><path d='M80 350 C140 300, 170 220, 220 165 C260 120, 320 85, 365 115 C420 155, 420 235, 370 290 C320 345, 210 385, 140 390' fill='none' stroke='%23bfe3da' stroke-width='18' stroke-linecap='round' opacity='0.75'/><rect x='260' y='90' width='220' height='310' rx='40' fill='%23ffffff' opacity='0.96'/><text x='292' y='190' font-family='Inter, Arial' font-size='22' fill='%231d2a2a'>Hand Milk</text><text x='292' y='232' font-family='Inter, Arial' font-size='30' font-weight='700' fill='%231d2a2a'>Laminaria</text><rect x='292' y='265' width='170' height='14' rx='7' fill='%23f3efe8'/><rect x='292' y='290' width='145' height='14' rx='7' fill='%23f3efe8'/></svg>"
+                  src="milk.jpg"
                 />
                 <div class="mini-meta">
-                  <p class="mini-title">Hand Milk + Laminaria</p>
-                  <p class="mini-sub">Perfect skin • 24/7 comfort</p>
+                  <p class="mini-title" data-ru="Молочко для рук + Ламинария" data-en="Hand Milk + Laminaria">
+                    Молочко для рук + Ламинария
+                  </p>
+                  <p class="mini-sub" data-ru="Идеальная кожа • Комфорт 24/7" data-en="Perfect skin • 24/7 comfort">
+                    Идеальная кожа • Комфорт 24/7
+                  </p>
                 </div>
               </div>
             </div>
@@ -120,32 +153,44 @@
       <section class="section" id="news" aria-label="News">
         <div class="container">
           <div class="section-head">
-            <h2>News</h2>
-            <p class="muted">Brand updates, ingredients, and care tips.</p>
+            <h2 data-ru="Новости" data-en="News">Новости</h2>
+            <p class="muted" data-ru="Обновления бренда, ингредиенты и советы по уходу." data-en="Brand updates, ingredients, and care tips.">
+              Обновления бренда, ингредиенты и советы по уходу.
+            </p>
           </div>
 
           <div class="cards-grid cards-3">
             <article class="card card-press">
-              <p class="card-kicker">Ingredient spotlight</p>
-              <h3>Liposomal formulas—why they feel gentler</h3>
-              <p class="card-text">
-                A calm approach to daily supplementation with a modern delivery format.
+              <p class="card-kicker" data-ru="Ингредиенты" data-en="Ingredient spotlight">Ингредиенты</p>
+              <h3 data-ru="Липосомальные формулы — почему они мягче" data-en="Liposomal formulas—why they feel gentler">
+                Липосомальные формулы — почему они мягче
+              </h3>
+              <p class="card-text" data-ru="Спокойный подход к ежедневному приёму с современным способом доставки." data-en="A calm approach to daily supplementation with a modern delivery format.">
+                Спокойный подход к ежедневному приёму с современным способом доставки.
               </p>
-              <a class="link" href="products.html#iron">Learn more →</a>
+              <a class="link" href="products.html#iron" data-ru="Подробнее →" data-en="Learn more →">Подробнее →</a>
             </article>
             <article class="card card-press">
-              <p class="card-kicker">New batch</p>
-              <h3>Vitamin D3K2 is back in stock</h3>
-              <p class="card-text">
-                Fresh stock with a clean label—designed for easy, everyday routines.
+              <p class="card-kicker" data-ru="Новинка" data-en="New batch">Новинка</p>
+              <h3 data-ru="Vitamin D — скоро в продаже" data-en="Vitamin D3K2 is back in stock">
+                Vitamin D — скоро в продаже
+              </h3>
+              <p class="card-text" data-ru="Премиальный выпуск в разработке. Следите за анонсами." data-en="A premium release is in development. Follow updates.">
+                Премиальный выпуск в разработке. Следите за анонсами.
               </p>
-              <a class="link" href="#new-arrivals">See New Arrivals →</a>
+              <a class="link" href="#new-arrivals" data-ru="Смотреть новинки →" data-en="See New Arrivals →">Смотреть новинки →</a>
             </article>
             <article class="card card-press">
-              <p class="card-kicker">Self-care</p>
-              <h3>Soft hands season: Laminaria hand milk</h3>
-              <p class="card-text">A light texture with a natural, comforting feel.</p>
-              <a class="link" href="products.html#hand-milk">Explore Hand Milk →</a>
+              <p class="card-kicker" data-ru="Уход" data-en="Self-care">Уход</p>
+              <h3 data-ru="Сезон мягких рук: молочко с ламинарией" data-en="Soft hands season: Laminaria hand milk">
+                Сезон мягких рук: молочко с ламинарией
+              </h3>
+              <p class="card-text" data-ru="Лёгкая текстура с естественным комфортом." data-en="A light texture with a natural, comforting feel.">
+                Лёгкая текстура с естественным комфортом.
+              </p>
+              <a class="link" href="products.html#hand-milk" data-ru="Перейти к продукту →" data-en="Explore Hand Milk →">
+                Перейти к продукту →
+              </a>
             </article>
           </div>
         </div>
@@ -155,8 +200,10 @@
       <section class="section section-accent" id="new-arrivals" aria-label="New arrivals">
         <div class="container">
           <div class="section-head">
-            <h2>Новинки</h2>
-            <p class="muted">Fresh favorites—simple routines, beautiful results.</p>
+            <h2 data-ru="Новинки" data-en="New arrivals">Новинки</h2>
+            <p class="muted" data-ru="Лучшие новинки для простой и эффективной рутины." data-en="Fresh favorites for simple routines and beautiful results.">
+              Лучшие новинки для простой и эффективной рутины.
+            </p>
           </div>
 
           <div class="product-grid">
@@ -164,19 +211,19 @@
               <div class="product-media">
                 <img
                   alt="Liposomal Iron product photo"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='650' viewBox='0 0 900 650'><defs><linearGradient id='ga' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ffffff'/><stop offset='1' stop-color='%23e7f3ef'/></linearGradient></defs><rect width='900' height='650' rx='44' fill='url(%23ga)'/><rect x='170' y='140' width='300' height='380' rx='42' fill='%23ffffff' opacity='0.98'/><circle cx='660' cy='230' r='120' fill='%23ffd9c8' opacity='0.55'/><circle cx='610' cy='310' r='90' fill='%23bfe3da' opacity='0.55'/><text x='220' y='250' font-family='Inter, Arial' font-size='24' fill='%231d2a2a'>Liposomal</text><text x='220' y='305' font-family='Inter, Arial' font-size='48' font-weight='700' fill='%231d2a2a'>Iron</text><rect x='220' y='340' width='210' height='14' rx='7' fill='%23f3efe8'/><rect x='220' y='365' width='165' height='14' rx='7' fill='%23f3efe8'/><rect x='220' y='390' width='190' height='14' rx='7' fill='%23f3efe8'/></svg>"
+                  src="iron.jpg"
                 />
               </div>
               <div class="product-body">
-                <h3 class="product-title">Liposomal Iron</h3>
-                <p class="product-desc">
-                  Liposomal form for 90% absorption. Raises hemoglobin & ferritin without constipation.
+                <h3 class="product-title" data-ru="Липосомальное железо" data-en="Liposomal Iron">Липосомальное железо</h3>
+                <p class="product-desc" data-ru="Липосомальная форма с высокой усвояемостью. Повышает гемоглобин и ферритин без запоров." data-en="Liposomal form with high absorption. Raises hemoglobin and ferritin without constipation.">
+                  Липосомальная форма с высокой усвояемостью. Повышает гемоглобин и ферритин без запоров.
                 </p>
                 <div class="product-row">
-                  <span class="price">₽2 490</span>
+                  <span class="price">₽3600</span>
                   <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html">Подробнее</a>
-                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer">Купить на Wildberries</a>
+                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html" data-ru="Подробнее" data-en="More details">Подробнее</a>
+                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
                   </div>
                 </div>
               </div>
@@ -186,19 +233,19 @@
               <div class="product-media">
                 <img
                   alt="Vitamin D3K2 product photo"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='650' viewBox='0 0 900 650'><defs><linearGradient id='gb' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23fff6ef'/><stop offset='1' stop-color='%23eaf6f2'/></linearGradient></defs><rect width='900' height='650' rx='44' fill='url(%23gb)'/><rect x='185' y='150' width='310' height='370' rx='42' fill='%23ffffff' opacity='0.98'/><circle cx='690' cy='250' r='140' fill='%23ffd9c8' opacity='0.45'/><text x='235' y='270' font-family='Inter, Arial' font-size='24' fill='%231d2a2a'>Vitamin</text><text x='235' y='330' font-family='Inter, Arial' font-size='52' font-weight='700' fill='%231d2a2a'>D3K2</text><rect x='235' y='365' width='220' height='14' rx='7' fill='%23f3efe8'/><rect x='235' y='390' width='180' height='14' rx='7' fill='%23f3efe8'/></svg>"
+                  src="milk.jpg"
                 />
               </div>
               <div class="product-body">
-                <h3 class="product-title">Hand Milk with Laminaria</h3>
-                <p class="product-desc">
-                  24/7 hydration with cellular laminaria juice & oils. For dry/cracked skin.
+                <h3 class="product-title" data-ru="Молочко для рук с ламинарией" data-en="Hand Milk with Laminaria">Молочко для рук с ламинарией</h3>
+                <p class="product-desc" data-ru="Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой и трескающейся кожи." data-en="24/7 hydration with cellular laminaria juice and oils. For dry, cracked skin.">
+                  Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой и трескающейся кожи.
                 </p>
                 <div class="product-row">
-                  <span class="price">₽1 690</span>
+                  <span class="price">₽1690</span>
                   <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="hand-milk.html">Подробнее</a>
-                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer">Купить на Wildberries</a>
+                    <a class="btn btn-small btn-ghost" href="hand-milk.html" data-ru="Подробнее" data-en="More details">Подробнее</a>
+                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
                   </div>
                 </div>
               </div>
@@ -208,19 +255,19 @@
               <div class="product-media">
                 <img
                   alt="Hand Milk with Laminaria product photo"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='650' viewBox='0 0 900 650'><defs><linearGradient id='gc' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23fff1f6'/><stop offset='1' stop-color='%23e8f6f1'/></linearGradient></defs><rect width='900' height='650' rx='44' fill='url(%23gc)'/><path d='M140 510 C230 420, 240 300, 345 210 C420 145, 520 110, 580 170 C650 240, 620 360, 530 440 C440 520, 280 580, 170 585' fill='none' stroke='%23bfe3da' stroke-width='22' stroke-linecap='round' opacity='0.75'/><rect x='500' y='160' width='250' height='360' rx='44' fill='%23ffffff' opacity='0.98'/><text x='540' y='280' font-family='Inter, Arial' font-size='22' fill='%231d2a2a'>Hand Milk</text><text x='540' y='330' font-family='Inter, Arial' font-size='34' font-weight='700' fill='%231d2a2a'>Laminaria</text><rect x='540' y='365' width='185' height='14' rx='7' fill='%23f3efe8'/><rect x='540' y='390' width='155' height='14' rx='7' fill='%23f3efe8'/></svg>"
+                  src=""
                 />
               </div>
               <div class="product-body">
-                <h3 class="product-title">Coming soon: Premium Vitamin D</h3>
-                <p class="product-desc">
-                  Teaser: a premium Vitamin D release is in development. Follow updates on Instagram.
+                <h3 class="product-title" data-ru="Скоро: Premium Vitamin D" data-en="Coming soon: Premium Vitamin D">Скоро: Premium Vitamin D</h3>
+                <p class="product-desc" data-ru="Премиальный витамин D в разработке. Следите за обновлениями." data-en="A premium Vitamin D release is in development. Follow updates.">
+                  Премиальный витамин D в разработке. Следите за обновлениями.
                 </p>
                 <div class="product-row">
-                  <span class="price">Soon</span>
+                  <span class="price" data-ru="Скоро" data-en="Soon">Скоро</span>
                   <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="blog.html">Read the blog</a>
-                    <a class="btn btn-small btn-primary" href="https://www.instagram.com/pro_vizor888" target="_blank" rel="noreferrer">Instagram</a>
+                    <a class="btn btn-small btn-ghost" href="blog.html" data-ru="Читать блог" data-en="Read the blog">Читать блог</a>
+                    <a class="btn btn-small btn-primary" href="https://www.instagram.com/pro_vizor888" target="_blank" rel="noreferrer" data-ru="Instagram" data-en="Instagram">Instagram</a>
                   </div>
                 </div>
               </div>
@@ -234,19 +281,19 @@
         <div class="container about-grid">
           <div>
             <div class="section-head">
-              <h2>Pharmacist-led wellness</h2>
-              <p class="muted">Short intro / Коротко обо мне</p>
+            <h2 data-ru="Фармацевтическая экспертиза" data-en="Pharmacist-led expertise">Фармацевтическая экспертиза</h2>
+            <p class="muted" data-ru="Коротко обо мне" data-en="Short intro">Коротко обо мне</p>
             </div>
-            <p class="body-text">
-              I am a pharmacist and wellness expert. I launched this line for real results: iron
-              without side effects and hand milk for dry skin. I know these problems and created
-              the best products in these segments.
+          <p class="body-text" data-ru="Я фармацевт и эксперт по wellness. Запустила линейку ради реальных результатов: железо без побочных эффектов и молочко для сухой кожи. Я знаю эти проблемы и создала лучшие продукты в этих сегментах." data-en="I am a pharmacist and wellness expert. I launched this line for real results: iron without side effects and hand milk for dry skin. I know these problems and created the best products in these segments.">
+              Я фармацевт и эксперт по wellness. Запустила линейку ради реальных результатов:
+              железо без побочных эффектов и молочко для сухой кожи. Я знаю эти проблемы и
+              создала лучшие продукты в этих сегментах.
             </p>
             <div class="about-pills" role="list" aria-label="Brand values">
-              <span class="pill" role="listitem">12+ years clinical experience</span>
-              <span class="pill" role="listitem">Integrity</span>
-              <span class="pill" role="listitem">Science + results</span>
-              <span class="pill" role="listitem">Minimal, premium</span>
+            <span class="pill" role="listitem" data-ru="12+ лет клинического опыта" data-en="12+ years clinical experience">12+ лет клинического опыта</span>
+            <span class="pill" role="listitem" data-ru="Честность" data-en="Integrity">Честность</span>
+            <span class="pill" role="listitem" data-ru="Наука + результат" data-en="Science + results">Наука + результат</span>
+            <span class="pill" role="listitem" data-ru="Минимализм, премиум" data-en="Minimal, premium">Минимализм, премиум</span>
             </div>
           </div>
 
@@ -264,28 +311,30 @@
       <section class="section" id="testimonials" aria-label="Testimonials">
         <div class="container">
           <div class="section-head">
-            <h2>Testimonials</h2>
-            <p class="muted">Instagram / Wildberries review placeholders (replace with real reviews).</p>
+            <h2 data-ru="Отзывы" data-en="Testimonials">Отзывы</h2>
+            <p class="muted" data-ru="Плейсхолдеры отзывов Instagram / Wildberries (замените на реальные)." data-en="Instagram / Wildberries review placeholders (replace with real reviews).">
+              Плейсхолдеры отзывов Instagram / Wildberries (замените на реальные).
+            </p>
           </div>
 
           <div class="cards-grid cards-3">
             <article class="card">
-              <p class="card-kicker">Instagram</p>
-              <h3>“Energy came back in 2 weeks.”</h3>
-              <p class="card-text">Review placeholder — add screenshot / quote here.</p>
-              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer">View source →</a>
+              <p class="card-kicker" data-ru="Instagram" data-en="Instagram">Instagram</p>
+              <h3 data-ru="«Энергия вернулась через 2 недели»" data-en="“Energy came back in 2 weeks.”">«Энергия вернулась через 2 недели»</h3>
+              <p class="card-text" data-ru="Плейсхолдер — добавьте скрин/цитату." data-en="Review placeholder — add screenshot / quote here.">Плейсхолдер — добавьте скрин/цитату.</p>
+              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer" data-ru="Источник →" data-en="View source →">Источник →</a>
             </article>
             <article class="card">
-              <p class="card-kicker">Wildberries</p>
-              <h3>“No constipation. Finally!”</h3>
-              <p class="card-text">Review placeholder — add WB review text here.</p>
-              <a class="link" href="https://wildberries.ru" target="_blank" rel="noreferrer">View source →</a>
+              <p class="card-kicker" data-ru="Wildberries" data-en="Wildberries">Wildberries</p>
+              <h3 data-ru="«Никаких запоров. Наконец-то!»" data-en="“No constipation. Finally!”">«Никаких запоров. Наконец-то!»</h3>
+              <p class="card-text" data-ru="Плейсхолдер — добавьте текст отзыва WB." data-en="Review placeholder — add WB review text here.">Плейсхолдер — добавьте текст отзыва WB.</p>
+              <a class="link" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Источник →" data-en="View source →">Источник →</a>
             </article>
             <article class="card">
-              <p class="card-kicker">Instagram</p>
-              <h3>“Hands healed after winter.”</h3>
-              <p class="card-text">Review placeholder — add screenshot / quote here.</p>
-              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer">View source →</a>
+              <p class="card-kicker" data-ru="Instagram" data-en="Instagram">Instagram</p>
+              <h3 data-ru="«Руки восстановились после зимы»" data-en="“Hands healed after winter.”">«Руки восстановились после зимы»</h3>
+              <p class="card-text" data-ru="Плейсхолдер — добавьте скрин/цитату." data-en="Review placeholder — add screenshot / quote here.">Плейсхолдер — добавьте скрин/цитату.</p>
+              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer" data-ru="Источник →" data-en="View source →">Источник →</a>
             </article>
           </div>
         </div>
@@ -295,12 +344,10 @@
       <section class="section section-accent" aria-label="Call to action">
         <div class="container">
           <div class="section-head">
-            <h2>Ready to choose?</h2>
-            <p class="muted">Choose your product below or go straight to the store.</p>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="products.html">Go to store</a>
-            <a class="btn btn-ghost" href="contact.html">Ask a question</a>
+            <h2 data-ru="Выберите свой продукт" data-en="Choose your product">Выберите свой продукт</h2>
+            <p class="muted" data-ru="Купить можно в карточках ниже на Wildberries." data-en="Buy directly from the product cards below on Wildberries.">
+              Купить можно в карточках ниже на Wildberries.
+            </p>
           </div>
         </div>
       </section>
@@ -311,17 +358,21 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small">Premium health &amp; wellness by a female pharmacist/entrepreneur.</p>
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
+            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
-          <a href="index.html" class="active">Home</a>
-          <a href="products.html">Products</a>
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" class="active" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
 

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-ru="К содержимому" data-en="Skip to content">К содержимому</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -25,20 +25,32 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-            <span class="brand-sub">Pharmaceutical elegance • Health &amp; Wellness</span>
+            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
+              Фармацевтическая элегантность
+            </span>
           </span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary">
-          <a href="index.html">Главная</a>
-          <a href="products.html" class="active">Продукты</a>
-          <a href="blog.html">Блог</a>
-          <a href="about.html">Обо мне</a>
-          <a href="contact.html">Контакты</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
 
         <div class="header-cta">
-          <a class="btn btn-primary" href="products.html#iron">Вернутья в продукты</a>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
         </div>
       </div>
     </header>
@@ -61,45 +73,44 @@
 
           <div class="founder-copy">
             <div class="section-head">
-              <h1>Липосомальное железо</h1>
-             
+              <h1 data-ru="Липосомальное железо" data-en="Liposomal Iron">Липосомальное железо</h1>
             </div>
 
-            <p class="body-text">
+            <p class="body-text" data-ru="Липосомальная форма для 90% усвояемости. Поднимает гемоглобин и самое важное ферритин без запоров. Дозировка: 1 капс/день. Для женщин, спортсменов, веганов." data-en="Liposomal form with 90% absorption. Raises hemoglobin and ferritin without constipation. Dosage: 1 capsule/day. For women, athletes, vegans.">
               Липосомальная форма для 90% усвояемости. Поднимает гемоглобин и самое важное Ферритин без запоров. 
               Дозировка: 1 капс/день. Для женщин, спортсменов, веганов. 
             </p>
 
             <div class="philosophy" id="ingredients">
-              <h3>Состав</h3>
+              <h3 data-ru="Состав" data-en="Ingredients">Состав</h3>
               <ul class="checklist">
-                <li>Липосомальное железо бисглицинат</li>
-                <li>Липосомальный витамин C</li>
-                <li>Липосомальный В12</li>
-                <li>B9</li>
+                <li data-ru="Липосомальное железо бисглицинат" data-en="Liposomal iron bisglycinate">Липосомальное железо бисглицинат</li>
+                <li data-ru="Липосомальный витамин C" data-en="Liposomal vitamin C">Липосомальный витамин C</li>
+                <li data-ru="Липосомальный В12" data-en="Liposomal B12">Липосомальный В12</li>
+                <li data-ru="B9" data-en="B9">B9</li>
               </ul>
             </div>
 
             <div class="philosophy" id="benefits">
-              <h3>Польза</h3>
+              <h3 data-ru="Польза" data-en="Benefits">Польза</h3>
               <ul class="checklist">
-                <li>+ Энергия</li>
-                <li>- Усталость</li>
-                <li>Поддержка щитовидки</li>
+                <li data-ru="+ Энергия" data-en="+ Energy">+ Энергия</li>
+                <li data-ru="- Усталость" data-en="- Fatigue">- Усталость</li>
+                <li data-ru="Поддержка щитовидки" data-en="Thyroid support">Поддержка щитовидки</li>
               </ul>
             </div>
 
             <div class="product-row" style="margin-top: 18px;">
-              <span class="price">₽3 692</span>
+              <span class="price" data-ru="₽3 692" data-en="₽3 692">₽3 692</span>
               <div class="product-actions">
-                <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer">Купить на Wildberries</a>
-                <a class="btn btn-small btn-ghost" href="products.html#iron">Назад</a>
+                <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
+                <a class="btn btn-small btn-ghost" href="products.html#iron" data-ru="Назад" data-en="Back">Назад</a>
               </div>
             </div>
 
             <div class="quote" style="margin-top: 18px;">
-              <p class="quote-text">“Iron without side effects — the routine you can actually keep.”</p>
-              <p class="quote-author">— pharmacist-led formulation note</p>
+              <p class="quote-text" data-ru="«Железо без побочных эффектов — рутина, которую легко соблюдать»" data-en="“Iron without side effects — a routine you can actually keep.”">«Железо без побочных эффектов — рутина, которую легко соблюдать»</p>
+              <p class="quote-author" data-ru="— заметка фармацевта" data-en="— pharmacist’s note">— заметка фармацевта</p>
             </div>
           </div>
         </div>
@@ -110,17 +121,21 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small">Premium health &amp; wellness by a female pharmacist/entrepreneur.</p>
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
+            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
-          <a href="index.html">Home</a>
-          <a href="products.html" class="active">Products</a>
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
 

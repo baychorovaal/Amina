@@ -140,6 +140,28 @@ a {
   flex-wrap: wrap;
 }
 
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(205, 170, 107, 0.35);
+  background: rgba(15, 15, 18, 0.92);
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--gold-2);
+  border-radius: 2px;
+}
+
 .nav a {
   font-size: 13px;
   color: rgba(246, 241, 230, 0.88);
@@ -163,6 +185,33 @@ a {
 .header-cta {
   display: flex;
   justify-content: flex-end;
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(205, 170, 107, 0.30);
+  background: rgba(15, 15, 18, 0.72);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-btn.is-active {
+  background: rgba(205, 170, 107, 0.18);
+  color: var(--ink);
+  border: 1px solid rgba(205, 170, 107, 0.55);
 }
 
 /* Buttons */
@@ -262,7 +311,7 @@ h3 {
 
 .body-text {
   margin: 0;
-  color: rgba(19, 35, 35, 0.86);
+  color: #bfb6a6;
   max-width: 62ch;
 }
 
@@ -472,6 +521,89 @@ h3 {
   gap: 14px;
 }
 
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cert-card {
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(205, 170, 107, 0.22);
+  background: rgba(17, 17, 19, 0.75);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.55);
+  border-color: rgba(205, 170, 107, 0.45);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: calc(var(--radius-lg) - 10px);
+  border: 1px solid rgba(205, 170, 107, 0.18);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 7, 8, 0.86);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: min(960px, 92vw);
+  width: 100%;
+  background: rgba(15, 15, 18, 0.96);
+  border: 1px solid rgba(205, 170, 107, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  position: relative;
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.lightbox-caption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid rgba(205, 170, 107, 0.35);
+  background: rgba(15, 15, 18, 0.92);
+  color: var(--ink);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+
 .product-card {
   border-radius: var(--radius-lg);
   background: rgba(17, 17, 19, 0.74);
@@ -620,7 +752,7 @@ h3 {
 .checklist {
   margin: 10px 0 0;
   padding-left: 18px;
-  color: rgba(19, 35, 35, 0.86);
+  color: #bfb6a6;
 }
 
 .checklist li {
@@ -772,8 +904,24 @@ textarea {
 /* Responsive */
 @media (max-width: 980px) {
   .header-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    min-height: 10vh;
+    padding: 8px 0;
+  }
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
+    padding: 12px 0 4px;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  body.nav-open .nav {
+    display: flex;
   }
   .header-cta {
     justify-content: flex-start;
@@ -790,6 +938,9 @@ textarea {
     grid-template-columns: 1fr;
   }
   .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-grid {
     grid-template-columns: 1fr;
   }
   .banner-mini-grid {

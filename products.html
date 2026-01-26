@@ -6,7 +6,7 @@
     <title>LEDIPROVIZOR — Продукты</title>
     <meta
       name="description"
-      content="LEDIPROVIZOR products: Liposomal Iron and Hand Milk with Laminaria. Premium wellness: science + results."
+      content="LEDIPROVIZOR products: Липосомальное железо and Hand Milk with Laminaria. Premium wellness: science + results."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-ru="К содержимому" data-en="Skip to content">К содержимому</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -25,20 +25,32 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-            <span class="brand-sub">Pharmaceutical elegance • Health &amp; Wellness</span>
+            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
+              Фармацевтическая элегантность
+            </span>
           </span>
         </a>
 
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="nav" aria-label="Primary">
-          <a href="index.html">Главная</a>
-          <a href="products.html" class="active">Продукты</a>
-          <a href="blog.html">Блог</a>
-          <a href="about.html">Обо мне</a>
-          <a href="contact.html">Контакты</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
 
         <div class="header-cta">
-          <a class="btn btn-primary" href="https://www.wildberries.ru/seller/250045490">Перейти в магазин</a>
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
         </div>
       </div>
     </header>
@@ -47,65 +59,44 @@
       <section class="section hero" aria-label="Products hero">
         <div class="container">
           <div class="section-head">
-            <h1>Продукты</h1>
+            <h1 data-ru="Продукты" data-en="Products">Продукты</h1>
             
           </div>
-          <p class="body-text">
-            Two flagship products: Liposomal Iron for energy and Hand Milk with Laminaria for
-            perfect skin. Coming soon: Premium Vitamin D.
+          <p class="body-text" data-ru="Два флагманских продукта: липосомальное железо для энергии и молочко для рук с ламинарией для идеальной кожи. Скоро: Premium Vitamin D." data-en="Two flagship products: Liposomal Iron for energy and Hand Milk with Laminaria for perfect skin. Coming soon: Premium Vitamin D.">
+            Два флагманских продукта: липосомальное железо для энергии и молочко для рук с ламинарией
+            для идеальной кожи. Скоро: Premium Vitamin D.
           </p>
         </div>
       </section>
 
-      <section class="section" id="iron" aria-label="Liposomal Iron">
+      <section class="section" id="iron" aria-label="Липосомальное железо">
         <div class="container">
           <div class="section-head">
-            <h2>Liposomal Iron</h2>
-            <p class="muted">90% absorption • No constipation • 1 capsule/day</p>
+            <h2 data-ru="Липосомальное железо" data-en="Liposomal Iron">Липосомальное железо</h2>
+            <p class="muted" data-ru="90% усвояемости • без запоров • 1 капсула/день" data-en="90% absorption • no constipation • 1 capsule/day">
+              90% усвояемости • без запоров • 1 капсула/день
+            </p>
           </div>
 
           <div class="product-grid">
             <article class="product-card">
               <div class="product-media">
                 <img
-                  alt="Liposomal Iron packaging photo placeholder"
+                  alt="Липосомальное железо packaging photo placeholder"
                   src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='760' viewBox='0 0 1100 760'><defs><linearGradient id='b' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23070708'/><stop offset='1' stop-color='%23151518'/></linearGradient><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f0dcaa'/><stop offset='1' stop-color='%23cdaa6b'/></linearGradient></defs><rect width='1100' height='760' rx='44' fill='url(%23b)'/><rect x='70' y='70' width='420' height='560' rx='44' fill='%230f0f12' stroke='url(%23g)' stroke-width='8'/><text x='120' y='220' font-family='Cinzel, Georgia' font-size='30' fill='%23f0dcaa'>Packaging</text><text x='120' y='270' font-family='Fraunces, Georgia' font-size='18' fill='%23bfb6a6'>Replace with real photo</text><circle cx='820' cy='320' r='160' fill='%23ffffff' opacity='0.04'/><circle cx='760' cy='360' r='120' fill='%23cdaa6b' opacity='0.10'/><text x='630' y='520' font-family='Cinzel, Georgia' font-size='44' fill='%23f0dcaa'>Liposomal</text><text x='630' y='575' font-family='Cinzel, Georgia' font-size='58' fill='%23f8f3e8'>Iron</text></svg>"
                 />
               </div>
               <div class="product-body">
-                <h3 class="product-title">Liposomal Iron</h3>
-                <p class="product-desc">
-                  Liposomal form for 90% absorption. Raises hemoglobin and ferritin without
-                  constipation. For women, athletes, vegans. Dosage: 1 capsule/day.
+                <h3 class="product-title" data-ru="Липосомальное железо" data-en="Liposomal Iron">Липосомальное железо</h3>
+                <p class="product-desc" data-ru="Липосомальная форма с 90% усвояемостью. Повышает гемоглобин и ферритин без запоров. Для женщин, спортсменов, веганов. Дозировка: 1 капсула/день." data-en="Liposomal form with 90% absorption. Raises hemoglobin and ferritin without constipation. For women, athletes, vegans. Dosage: 1 capsule/day.">
+                  Липосомальная форма с 90% усвояемостью. Повышает гемоглобин и ферритин без
+                  запоров. Для женщин, спортсменов, веганов. Дозировка: 1 капсула/день.
                 </p>
                 <div class="product-row">
-                  <span class="price">₽2 490</span>
+                  <span class="price">₽3600</span>
                   <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html">More details</a>
-                    <a class="btn btn-small btn-primary" href="https://wildberries.ru" target="_blank" rel="noreferrer">Buy on Wildberries</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <div class="product-media">
-                <img
-                  alt="Liposomal Iron capsules photo placeholder"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='760' viewBox='0 0 1100 760'><defs><linearGradient id='b2' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23070708'/><stop offset='1' stop-color='%23151518'/></linearGradient><linearGradient id='g2' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f0dcaa'/><stop offset='1' stop-color='%23cdaa6b'/></linearGradient></defs><rect width='1100' height='760' rx='44' fill='url(%23b2)'/><rect x='70' y='70' width='960' height='560' rx='44' fill='%230f0f12' stroke='rgba(205,170,107,0.35)' stroke-width='6'/><circle cx='360' cy='360' r='90' fill='rgba(205,170,107,0.12)'/><circle cx='480' cy='410' r='70' fill='rgba(240,220,170,0.12)'/><circle cx='600' cy='350' r='80' fill='rgba(205,170,107,0.10)'/><text x='120' y='220' font-family='Cinzel, Georgia' font-size='30' fill='%23f0dcaa'>Capsules</text><text x='120' y='270' font-family='Fraunces, Georgia' font-size='18' fill='%23bfb6a6'>Replace with real macro shot</text></svg>"
-                />
-              </div>
-              <div class="product-body">
-                <h3 class="product-title">Ingredients</h3>
-                <p class="product-desc">
-                  Liposomal iron bisglycinate, liposomal vitamin C, liposomal B12, B9.
-                </p>
-                <div class="product-row">
-                  <span class="price">Benefits</span>
-                  <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html#benefits">+energy</a>
-                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html#benefits">-fatigue</a>
-                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html#benefits">thyroid support</a>
+                    <a class="btn btn-small btn-ghost" href="liposomal-iron.html" data-ru="Подробнее" data-en="More details">Подробнее</a>
+                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
                   </div>
                 </div>
               </div>
@@ -117,8 +108,10 @@
       <section class="section section-soft" id="hand-milk" aria-label="Hand Milk">
         <div class="container">
           <div class="section-head">
-            <h2>Hand Milk with Laminaria</h2>
-            <p class="muted">24/7 hydration • heals cracks • protects against cold</p>
+            <h2 data-ru="Молочко для рук с ламинарией" data-en="Hand Milk with Laminaria">Молочко для рук с ламинарией</h2>
+            <p class="muted" data-ru="Увлажнение 24/7 • заживляет трещины • защищает от холода" data-en="24/7 hydration • heals cracks • protects against cold">
+              Увлажнение 24/7 • заживляет трещины • защищает от холода
+            </p>
           </div>
 
           <div class="product-grid">
@@ -130,36 +123,16 @@
                 />
               </div>
               <div class="product-body">
-                <h3 class="product-title">Hand Milk with Laminaria</h3>
-                <p class="product-desc">
-                  24/7 hydration with cellular laminaria juice and oils. For dry/cracked skin,
-                  especially in winter. Lasts 72 hours, no initial stickiness.
+                <h3 class="product-title" data-ru="Молочко для рук с ламинарией" data-en="Hand Milk with Laminaria">Молочко для рук с ламинарией</h3>
+                <p class="product-desc" data-ru="Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой и трескающейся кожи, особенно зимой. Хватает на 72 часа, без липкости." data-en="24/7 hydration with cellular laminaria juice and oils. For dry, cracked skin, especially in winter. Lasts 72 hours, no stickiness.">
+                  Увлажнение 24/7 с клеточным соком ламинарии и маслами. Для сухой и трескающейся
+                  кожи, особенно зимой. Хватает на 72 часа, без липкости.
                 </p>
                 <div class="product-row">
-                  <span class="price">₽1 690</span>
+                  <span class="price">₽1690</span>
                   <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="hand-milk.html">More details</a>
-                    <a class="btn btn-small btn-primary" href="https://wildberries.ru" target="_blank" rel="noreferrer">Buy on Wildberries</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card product-card-soft">
-              <div class="product-media">
-                <img
-                  alt="Hand Milk on hands photo placeholder"
-                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='760' viewBox='0 0 1100 760'><defs><linearGradient id='hb2' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23070708'/><stop offset='1' stop-color='%23151518'/></linearGradient></defs><rect width='1100' height='760' rx='44' fill='url(%23hb2)'/><rect x='70' y='70' width='960' height='560' rx='44' fill='%230f0f12' stroke='rgba(205,170,107,0.35)' stroke-width='6'/><path d='M210 520 C300 420, 330 320, 420 260 C510 200, 650 190, 740 250 C820 310, 840 420, 780 490' fill='none' stroke='rgba(240,220,170,0.20)' stroke-width='22' stroke-linecap='round'/><text x='120' y='220' font-family='Cinzel, Georgia' font-size='30' fill='%23f0dcaa'>On hands</text><text x='120' y='270' font-family='Fraunces, Georgia' font-size='18' fill='%23bfb6a6'>Replace with real lifestyle photo</text></svg>"
-                />
-              </div>
-              <div class="product-body">
-                <h3 class="product-title">Benefits</h3>
-                <p class="product-desc">Heals cracks, protects against cold, comfortable feel.</p>
-                <div class="product-row">
-                  <span class="price">Availability</span>
-                  <div class="product-actions">
-                    <a class="btn btn-small btn-ghost" href="https://wildberries.ru" target="_blank" rel="noreferrer">Wildberries link</a>
-                    <a class="btn btn-small btn-ghost" href="hand-milk.html#usage">How to use</a>
+                    <a class="btn btn-small btn-ghost" href="hand-milk.html" data-ru="Подробнее" data-en="More details">Подробнее</a>
+                    <a class="btn btn-small btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Купить на Wildberries" data-en="Buy on Wildberries">Купить на Wildberries</a>
                   </div>
                 </div>
               </div>
@@ -171,25 +144,33 @@
       <section class="section section-accent" aria-label="Coming soon">
         <div class="container">
           <div class="section-head">
-            <h2>Coming soon</h2>
-            <p class="muted">Premium Vitamin D • Magnesium of own development</p>
+            <h2 data-ru="Скоро" data-en="Coming soon">Скоро</h2>
+            <p class="muted" data-ru="Premium Vitamin D • Магний собственной разработки" data-en="Premium Vitamin D • Magnesium of own development">
+              Premium Vitamin D • Магний собственной разработки
+            </p>
           </div>
           <div class="cards-grid cards-3">
             <article class="card">
-              <p class="card-kicker">Teaser</p>
-              <h3>Premium Vitamin D</h3>
-              <p class="card-text">A premium Vitamin D release is in development.</p>
+              <p class="card-kicker" data-ru="Тизер" data-en="Teaser">Тизер</p>
+              <h3 data-ru="Premium Vitamin D" data-en="Premium Vitamin D">Premium Vitamin D</h3>
+              <p class="card-text" data-ru="Премиальный витамин D в разработке." data-en="A premium Vitamin D release is in development.">
+                Премиальный витамин D в разработке.
+              </p>
             </article>
             <article class="card">
-              <p class="card-kicker">Teaser</p>
-              <h3>Magnesium (own development)</h3>
-              <p class="card-text">Formulation details will be announced soon.</p>
+              <p class="card-kicker" data-ru="Тизер" data-en="Teaser">Тизер</p>
+              <h3 data-ru="Магний (собственная разработка)" data-en="Magnesium (own development)">Магний (собственная разработка)</h3>
+              <p class="card-text" data-ru="Детали формулы будут объявлены позже." data-en="Formulation details will be announced soon.">
+                Детали формулы будут объявлены позже.
+              </p>
             </article>
             <article class="card">
-              <p class="card-kicker">Updates</p>
-              <h3>Follow on Instagram</h3>
-              <p class="card-text">Get launch dates and reels from the lab and routine.</p>
-              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer">Instagram →</a>
+              <p class="card-kicker" data-ru="Обновления" data-en="Updates">Обновления</p>
+              <h3 data-ru="Подписывайтесь в Instagram" data-en="Follow on Instagram">Подписывайтесь в Instagram</h3>
+              <p class="card-text" data-ru="Анонсы запусков и Reels из лаборатории." data-en="Launch dates and Reels from the lab and routine.">
+                Анонсы запусков и Reels из лаборатории.
+              </p>
+              <a class="link" href="https://instagram.com/your_account" target="_blank" rel="noreferrer" data-ru="Instagram →" data-en="Instagram →">Instagram →</a>
             </article>
           </div>
         </div>
@@ -200,17 +181,21 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small">Premium health &amp; wellness by a female pharmacist/entrepreneur.</p>
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
+            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
-          <a href="index.html">Home</a>
-          <a href="products.html" class="active">Products</a>
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
+          <a href="products.html" class="active" data-ru="Продукты" data-en="Products">Продукты</a>
+          <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
+          <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
+          <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
+          <a href="contact.html" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
 
