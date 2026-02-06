@@ -208,6 +208,11 @@ a {
   cursor: pointer;
 }
 
+.cert-link {
+  display: block;
+  cursor: pointer;
+}
+
 .lang-btn.is-active {
   background: rgba(205, 170, 107, 0.18);
   color: var(--ink);
@@ -498,7 +503,7 @@ h3 {
   font-weight: 800;
   font-size: 12px;
   letter-spacing: 0.3px;
-  color: rgba(19, 35, 35, 0.72);
+  color: rgba(255, 255, 255, 0.72);
   text-transform: uppercase;
 }
 
@@ -690,7 +695,7 @@ h3 {
   border: 1px solid rgba(191, 227, 218, 0.35);
   font-weight: 700;
   font-size: 13px;
-  color: rgba(19, 35, 35, 0.82);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .about-aside {
@@ -890,7 +895,7 @@ textarea {
 }
 
 .footer-links a {
-  color: rgba(19, 35, 35, 0.75);
+  color: rgba(255, 255, 255, 0.75);
   padding: 8px 10px;
   border-radius: 12px;
   border: 1px solid transparent;
@@ -906,8 +911,20 @@ textarea {
   .header-inner {
     grid-template-columns: 1fr auto;
     gap: 8px;
-    min-height: 10vh;
-    padding: 8px 0;
+    min-height: 8vh;
+    padding: 6px 0;
+  }
+  .header-cta {
+    justify-content: flex-end;
+    align-self: center;
+  }
+  .lang-switch {
+    padding: 4px;
+    gap: 6px;
+  }
+  .lang-btn {
+    font-size: 10px;
+    padding: 4px 8px;
   }
   .nav {
     display: none;
