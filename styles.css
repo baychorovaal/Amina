@@ -646,6 +646,11 @@ h3 {
   font-size: 14px;
 }
 
+.lightbox-caption:empty {
+  display: none;
+  margin: 0;
+}
+
 .lightbox-close {
   position: absolute;
   top: 12px;
