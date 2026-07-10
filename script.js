@@ -1,5 +1,12 @@
 (() => {
-  const setLang = (lang) => {
+  const LANG_KEY = "lediprovizor-lang";
+
+  const getSavedLang = () => {
+    const saved = localStorage.getItem(LANG_KEY);
+    return saved === "en" || saved === "ru" ? saved : "ru";
+  };
+
+  const setLang = (lang, persist = true) => {
     document.documentElement.setAttribute("lang", lang);
     document.body.setAttribute("data-lang", lang);
     document.querySelectorAll("[data-ru-html]").forEach((el) => {
@@ -41,6 +48,16 @@
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.toggle("is-active", btn.dataset.langSwitch === lang);
     });
+    document.querySelectorAll(".article-toggle").forEach((toggle) => {
+      const article = toggle.closest(".blog-article");
+      const isOpen = article?.classList.contains("is-expanded");
+      const expand = lang === "en" ? toggle.getAttribute("data-en") : toggle.getAttribute("data-ru");
+      const collapse = lang === "en" ? toggle.getAttribute("data-en-collapse") : toggle.getAttribute("data-ru-collapse");
+      if (expand) toggle.textContent = isOpen && collapse ? collapse : expand;
+    });
+    if (persist) {
+      localStorage.setItem(LANG_KEY, lang);
+    }
   };
 
   const setupNavToggle = () => {
@@ -60,31 +77,85 @@
     });
   };
 
+  const getLightboxSrc = (link) => {
+    let src =
+      link.dataset.lightboxSrc ||
+      link.getAttribute("href") ||
+      link.dataset.lightbox;
+    if (!src || src === "#") {
+      src = link.querySelector("img")?.getAttribute("src") || "";
+    }
+    return src;
+  };
+
+  const getLightboxTitle = (link, lang) => {
+    const titleRu = link.dataset.titleRu || link.dataset.title || "";
+    const titleEn = link.dataset.titleEn || "";
+    return lang === "en" && titleEn ? titleEn : titleRu;
+  };
+
   const setupLightbox = () => {
     const modal = document.querySelector(".lightbox");
     if (!modal) return;
     const modalImg = modal.querySelector("img");
     const caption = modal.querySelector(".lightbox-caption");
     const closeBtn = modal.querySelector(".lightbox-close");
+    const prevBtn = modal.querySelector(".lightbox-prev");
+    const nextBtn = modal.querySelector(".lightbox-next");
+    let galleryItems = [];
+    let currentIndex = 0;
 
-    document.querySelectorAll("[data-lightbox]").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        let src = link.getAttribute("href") || link.dataset.lightbox;
-        if (!src || src === "#") {
-          src = link.querySelector("img")?.getAttribute("src") || "";
-        }
-        const lang = document.body.getAttribute("data-lang") || "ru";
-        const titleRu = link.dataset.titleRu || link.dataset.title || "";
-        const titleEn = link.dataset.titleEn || "";
-        const title = lang === "en" && titleEn ? titleEn : titleRu;
-        modalImg.src = src;
-        modalImg.alt = title;
-        caption.textContent = title;
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-      });
-    });
+    const updateNavVisibility = () => {
+      const hasGallery = galleryItems.length > 1;
+      if (prevBtn) prevBtn.style.display = hasGallery ? "" : "none";
+      if (nextBtn) nextBtn.style.display = hasGallery ? "" : "none";
+    };
+
+    const showSlide = (index) => {
+      if (!galleryItems.length) return;
+      currentIndex = (index + galleryItems.length) % galleryItems.length;
+      const item = galleryItems[currentIndex];
+      modalImg.src = item.src;
+      modalImg.alt = item.title;
+      caption.textContent = item.title;
+    };
+
+    const openModal = (link) => {
+      const lang = document.body.getAttribute("data-lang") || "ru";
+      const galleryId = link.dataset.gallery;
+
+      if (galleryId) {
+        const seen = new Set();
+        galleryItems = [];
+        document.querySelectorAll(`[data-lightbox][data-gallery="${galleryId}"]`).forEach((item) => {
+          const src = getLightboxSrc(item);
+          if (!src || seen.has(src)) return;
+          seen.add(src);
+          galleryItems.push({
+            src,
+            title: getLightboxTitle(item, lang),
+          });
+        });
+        const clickedSrc = getLightboxSrc(link);
+        currentIndex = Math.max(
+          0,
+          galleryItems.findIndex((item) => item.src === clickedSrc)
+        );
+      } else {
+        galleryItems = [
+          {
+            src: getLightboxSrc(link),
+            title: getLightboxTitle(link, lang),
+          },
+        ];
+        currentIndex = 0;
+      }
+
+      showSlide(currentIndex);
+      updateNavVisibility();
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    };
 
     const closeModal = () => {
       modal.classList.remove("is-open");
@@ -92,6 +163,74 @@
       modalImg.src = "";
       modalImg.alt = "";
       caption.textContent = "";
+      galleryItems = [];
+      currentIndex = 0;
+      updateNavVisibility();
+    };
+
+    document.querySelectorAll("[data-lightbox]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        openModal(link);
+      });
+    });
+
+    prevBtn?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showSlide(currentIndex - 1);
+    });
+
+    nextBtn?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showSlide(currentIndex + 1);
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeModal();
+    });
+    closeBtn?.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (event) => {
+      if (!modal.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowLeft" && galleryItems.length > 1) showSlide(currentIndex - 1);
+      if (event.key === "ArrowRight" && galleryItems.length > 1) showSlide(currentIndex + 1);
+    });
+
+    updateNavVisibility();
+  };
+
+  const setupVideoModal = () => {
+    const modal = document.querySelector(".video-lightbox");
+    if (!modal) return;
+    const video = modal.querySelector("video");
+    const caption = modal.querySelector(".lightbox-caption");
+    const closeBtn = modal.querySelector(".lightbox-close");
+    if (!video) return;
+
+    document.querySelectorAll("[data-video]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        const src = trigger.dataset.video;
+        if (!src) return;
+        const lang = document.body.getAttribute("data-lang") || "ru";
+        const titleRu = trigger.dataset.titleRu || "";
+        const titleEn = trigger.dataset.titleEn || "";
+        const title = lang === "en" && titleEn ? titleEn : titleRu;
+        video.src = src;
+        caption.textContent = title;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        video.play().catch(() => {});
+      });
+    });
+
+    const closeModal = () => {
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+      caption.textContent = "";
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
     };
 
     modal.addEventListener("click", (event) => {
@@ -99,16 +238,66 @@
     });
     closeBtn?.addEventListener("click", closeModal);
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeModal();
+      if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  };
+
+  const setupContactForm = () => {
+    const form = document.querySelector(".contact-form");
+    if (!form) return;
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = form.querySelector("#name")?.value.trim() || "";
+      const email = form.querySelector("#email")?.value.trim() || "";
+      const message = form.querySelector("#message")?.value.trim() || "";
+      const subject = encodeURIComponent(`LEDIPROVIZOR — сообщение от ${name || "клиента"}`);
+      const body = encodeURIComponent(
+        `Имя: ${name}\nEmail: ${email}\n\n${message}`
+      );
+      window.location.href = `mailto:lediprovizor@gmail.com?subject=${subject}&body=${body}`;
+    });
+  };
+
+  const setupArticleToggle = () => {
+    document.querySelectorAll(".blog-article").forEach((article) => {
+      const toggle = article.querySelector(".article-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", () => {
+        const isOpen = article.classList.toggle("is-expanded");
+        const lang = document.body.getAttribute("data-lang") || "ru";
+        const expandRu = toggle.getAttribute("data-ru") || "Читать полностью";
+        const expandEn = toggle.getAttribute("data-en") || "Read full";
+        const collapseRu = toggle.getAttribute("data-ru-collapse") || "Свернуть";
+        const collapseEn = toggle.getAttribute("data-en-collapse") || "Collapse";
+        toggle.textContent = isOpen
+          ? lang === "en"
+            ? collapseEn
+            : collapseRu
+          : lang === "en"
+            ? expandEn
+            : expandRu;
+      });
+    });
+  };
+
+  const setupVideoPreviews = () => {
+    document.querySelectorAll(".reels-video-card video").forEach((video) => {
+      video.addEventListener("loadeddata", () => {
+        video.currentTime = 0.1;
+      });
     });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
     setupNavToggle();
     setupLightbox();
+    setupVideoModal();
+    setupContactForm();
+    setupArticleToggle();
+    setupVideoPreviews();
     document.querySelectorAll("[data-lang-switch]").forEach((btn) => {
       btn.addEventListener("click", () => setLang(btn.dataset.langSwitch));
     });
-    setLang("ru");
+    setLang(getSavedLang(), false);
   });
 })();

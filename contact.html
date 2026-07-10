@@ -4,16 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LEDIPROVIZOR — Contact / Контакты</title>
-    <meta
-      name="description"
-      content="Contact LEDIPROVIZOR: message form, delivery info, and links."
-    />
+    <meta name="description" content="Contact LEDIPROVIZOR: message form and links." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -22,31 +16,23 @@
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="Go to homepage">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-mark" src="лого.jpg" alt="LEDIPROVIZOR" width="36" height="36" />
           <span class="brand-text">
             <span class="brand-name">LEDIPROVIZOR</span>
-            <span class="brand-sub" data-ru="Фармацевтическая элегантность" data-en="Pharmaceutical elegance">
-              Фармацевтическая элегантность
-            </span>
+            <span class="brand-sub" data-ru="Провизорская элегантность" data-en="Provizor elegance">Провизорская элегантность</span>
           </span>
         </a>
-
         <button class="nav-toggle" type="button" aria-label="Открыть меню" data-ru-aria="Открыть меню" data-en-aria="Open menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
-
         <nav class="nav" aria-label="Primary">
           <a href="index.html" data-ru="Главная" data-en="Home">Главная</a>
           <a href="products.html" data-ru="Продукты" data-en="Products">Продукты</a>
           <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
           <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
           <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
-          <a href="medical-clothing.html" data-ru="Медицинская одежда" data-en="Medical clothing">Медицинская одежда</a>
           <a href="contact.html" class="active" data-ru="Контакты" data-en="Contact">Контакты</a>
         </nav>
-
         <div class="header-cta">
           <div class="lang-switch" role="group" aria-label="Language switcher">
             <button class="lang-btn is-active" type="button" data-lang-switch="ru">RU</button>
@@ -60,68 +46,34 @@
       <section class="section hero" aria-label="Contact hero">
         <div class="container">
           <div class="section-head">
-            <h1 data-ru="Контакты & Доставка" data-en="Contact & Delivery">Контакты &amp; Доставка</h1>
-            <p class="muted" data-ru="Минималистичная форма для вопросов и доставки." data-en="Minimal, readable support for questions and delivery.">
-              Минималистичная форма для вопросов и доставки.
-            </p>
+            <h1 data-ru="Контакты" data-en="Contact">Контакты</h1>
           </div>
-          <p class="body-text" data-ru="Отправьте сообщение через форму ниже (плейсхолдер). Позже можно подключить email, CRM или backend. Детали доставки легко заменить." data-en="Send a message below (placeholder form). Later you can connect email, a CRM, or a backend. Delivery details can be updated anytime.">
-            Отправьте сообщение через форму ниже (плейсхолдер). Позже можно подключить email,
-            CRM или backend. Детали доставки легко заменить.
+          <p class="body-text" data-ru="Мы всегда открыты к общению. Оставьте ваше сообщение, и наша команда обязательно свяжется с вами." data-en="We are always open to communication. Leave your message and our team will get back to you.">
+            Мы всегда открыты к общению. Оставьте ваше сообщение, и наша команда обязательно свяжется с вами.
           </p>
         </div>
       </section>
 
-      <section class="section" aria-label="Contact form and delivery info">
-        <div class="container about-grid">
-          <div>
-            <div class="section-head">
-              <h2 data-ru="Сообщение" data-en="Message">Сообщение</h2>
-              <p class="muted" data-ru="Обычно отвечаем в течение 24–48 часов (плейсхолдер)." data-en="We usually reply within 24–48 hours (placeholder).">
-                Обычно отвечаем в течение 24–48 часов (плейсхолдер).
-              </p>
+      <section class="section" aria-label="Contact form">
+        <div class="container">
+          <form class="form contact-form" action="mailto:lediprovizor@gmail.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label for="name" data-ru="Имя" data-en="Name">Имя</label>
+              <input id="name" name="name" type="text" placeholder="Ваше имя" data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" autocomplete="name" />
             </div>
-
-            <form class="form" action="#" method="post">
-              <div class="field">
-                <label for="name" data-ru="Имя" data-en="Name">Имя</label>
-                <input id="name" name="name" type="text" placeholder="Ваше имя" data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" autocomplete="name" />
-              </div>
-              <div class="field">
-                <label for="email" data-ru="Email" data-en="Email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
-              </div>
-              <div class="field">
-                <label for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
-                <textarea id="message" name="message" placeholder="Ваш вопрос…" data-ru-placeholder="Ваш вопрос…" data-en-placeholder="Your question…"></textarea>
-              </div>
-              <div class="hero-actions">
-                <button class="btn btn-primary" type="submit" data-ru="Отправить" data-en="Send">Отправить</button>
-                <a class="btn btn-ghost" href="products.html" data-ru="Смотреть продукты" data-en="View products">Смотреть продукты</a>
-              </div>
-            </form>
-          </div>
-
-          <aside class="about-aside" aria-label="Delivery information">
-            <div class="frame-inner">
-              <div class="section-head">
-                <h2 data-ru="Доставка" data-en="Delivery">Доставка</h2>
-                <p class="muted small" data-ru="Плейсхолдеры — замените вашей политикой." data-en="Placeholders — replace with your real policy.">
-                  Плейсхолдеры — замените вашей политикой.
-                </p>
-              </div>
-              <ul class="checklist">
-                <li data-ru="Маркетплейс: Wildberries (основной)" data-en="Marketplace: Wildberries (primary)">Маркетплейс: Wildberries (основной)</li>
-                <li data-ru="Доставка: по правилам маркетплейса" data-en="Shipping: according to marketplace rules">Доставка: по правилам маркетплейса</li>
-                <li data-ru="Возвраты: по политике маркетплейса" data-en="Returns: per marketplace policy">Возвраты: по политике маркетплейса</li>
-                <li data-ru="Поддержка: через Instagram или форму" data-en="Support: via Instagram DM or this form">Поддержка: через Instagram или форму</li>
-              </ul>
-              <div class="hero-actions" style="margin-top: 14px;">
-                <a class="btn btn-primary" href="https://www.wildberries.ru/seller/250045490" target="_blank" rel="noreferrer" data-ru="Перейти в Wildberries" data-en="Go to Wildberries">Перейти в Wildberries</a>
-                <a class="btn btn-ghost" href="https://instagram.com/your_account" target="_blank" rel="noreferrer" data-ru="Instagram" data-en="Instagram">Instagram</a>
-              </div>
+            <div class="field">
+              <label for="email" data-ru="Email" data-en="Email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
             </div>
-          </aside>
+            <div class="field">
+              <label for="message" data-ru="Сообщение" data-en="Message">Сообщение</label>
+              <textarea id="message" name="message" placeholder="Ваш вопрос…" data-ru-placeholder="Ваш вопрос…" data-en-placeholder="Your question…"></textarea>
+            </div>
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="submit" data-ru="Отправить" data-en="Send">Отправить</button>
+              <a class="btn btn-ghost" href="products.html" data-ru="Смотреть продукты" data-en="View products">Смотреть продукты</a>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -130,8 +82,8 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">LEDIPROVIZOR</p>
-          <p class="muted small" data-ru="Премиальный wellness‑бренд от фармацевта‑предпринимателя." data-en="Premium wellness brand by a female pharmacist‑entrepreneur.">
-            Премиальный wellness‑бренд от фармацевта‑предпринимателя.
+          <p class="muted small" data-ru="Премиальный wellness‑бренд от провизора‑предпринимателя." data-en="Premium wellness brand by a female provizor‑entrepreneur.">
+            Премиальный wellness‑бренд от провизора‑предпринимателя.
           </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
@@ -140,7 +92,6 @@
           <a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a>
           <a href="about.html" data-ru="Обо мне" data-en="About">Обо мне</a>
           <a href="certificates.html" data-ru="Сертификаты" data-en="Certificates">Сертификаты</a>
-          <a href="medical-clothing.html" data-ru="Медицинская одежда" data-en="Medical clothing">Медицинская одежда</a>
           <a href="contact.html" class="active" data-ru="Контакты" data-en="Contact">Контакты</a>
         </div>
       </div>
@@ -148,4 +99,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
