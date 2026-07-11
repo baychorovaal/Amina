@@ -648,6 +648,15 @@ h3 {
   object-fit: contain;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.25);
+  transition: opacity 160ms ease;
+}
+
+.lightbox-content img.is-loading {
+  opacity: 0.35;
+}
+
+.lightbox-content img.is-ready {
+  opacity: 1;
 }
 
 .lightbox-caption {

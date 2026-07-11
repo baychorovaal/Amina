@@ -85,6 +85,51 @@
       .join("/");
   };
 
+  const imageCache = new Map();
+
+  const preloadImage = (src) => {
+    if (!src || imageCache.has(src)) return imageCache.get(src);
+    const img = new Image();
+    img.decoding = "async";
+    img.src = encodeMediaPath(src);
+    imageCache.set(src, img);
+    return img;
+  };
+
+  const preloadGallery = (galleryId) => {
+    if (!galleryId) return;
+    document.querySelectorAll(`[data-lightbox][data-gallery="${galleryId}"]`).forEach((item) => {
+      preloadImage(getLightboxSrc(item));
+    });
+  };
+
+  const setupImagePreload = () => {
+    const sources = new Set();
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      const src = getLightboxSrc(el);
+      if (src) sources.add(src);
+    });
+
+    const preloadAll = () => sources.forEach((src) => preloadImage(src));
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(preloadAll, { timeout: 2500 });
+    } else {
+      setTimeout(preloadAll, 400);
+    }
+
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener(
+        "pointerenter",
+        () => {
+          preloadImage(getLightboxSrc(el));
+          preloadGallery(el.dataset.gallery);
+        },
+        { passive: true }
+      );
+    });
+  };
+
   const getLightboxSrc = (link) => {
     let src =
       link.dataset.lightboxSrc ||
@@ -123,9 +168,33 @@
       if (!galleryItems.length) return;
       currentIndex = (index + galleryItems.length) % galleryItems.length;
       const item = galleryItems[currentIndex];
-      modalImg.src = encodeMediaPath(item.src);
+      const cached = preloadImage(item.src);
+      const encoded = encodeMediaPath(item.src);
+
+      modalImg.classList.toggle("is-ready", cached.complete);
+      modalImg.classList.toggle("is-loading", !cached.complete);
+      modalImg.src = encoded;
       modalImg.alt = "";
       caption.textContent = item.title || "";
+
+      if (!cached.complete) {
+        const onReady = () => {
+          modalImg.classList.remove("is-loading");
+          modalImg.classList.add("is-ready");
+          modalImg.removeEventListener("load", onReady);
+        };
+        modalImg.addEventListener("load", onReady);
+      }
+
+      if (modalImg.decode) {
+        modalImg.decode().catch(() => {});
+      }
+
+      const nextItem = galleryItems[(currentIndex + 1) % galleryItems.length];
+      const prevItem =
+        galleryItems[(currentIndex - 1 + galleryItems.length) % galleryItems.length];
+      if (nextItem) preloadImage(nextItem.src);
+      if (prevItem) preloadImage(prevItem.src);
     };
 
     const openModal = (link) => {
@@ -133,6 +202,7 @@
       const galleryId = link.dataset.gallery;
 
       if (galleryId) {
+        preloadGallery(galleryId);
         const seen = new Set();
         galleryItems = [];
         document.querySelectorAll(`[data-lightbox][data-gallery="${galleryId}"]`).forEach((item) => {
@@ -154,26 +224,26 @@
           galleryItems.findIndex((item) => item.src === clickedSrc)
         );
       } else {
+        const src = getLightboxSrc(link);
+        preloadImage(src);
         galleryItems = [
           {
-            src: getLightboxSrc(link),
+            src,
             title: getLightboxTitle(link, lang),
           },
         ];
         currentIndex = 0;
       }
 
-      showSlide(currentIndex);
-      updateNavVisibility();
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
+      showSlide(currentIndex);
+      updateNavVisibility();
     };
 
     const closeModal = () => {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      modalImg.src = "";
-      modalImg.alt = "";
       caption.textContent = "";
       galleryItems = [];
       currentIndex = 0;
@@ -307,6 +377,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     setupNavToggle();
     setupLightbox();
+    setupImagePreload();
     setupVideoModal();
     setupContactForm();
     setupArticleToggle();
