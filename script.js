@@ -77,6 +77,14 @@
     });
   };
 
+  const encodeMediaPath = (path) => {
+    if (!path || /^https?:\/\//.test(path)) return path || "";
+    return path
+      .split("/")
+      .map((part) => encodeURIComponent(part))
+      .join("/");
+  };
+
   const getLightboxSrc = (link) => {
     let src =
       link.dataset.lightboxSrc ||
@@ -115,9 +123,9 @@
       if (!galleryItems.length) return;
       currentIndex = (index + galleryItems.length) % galleryItems.length;
       const item = galleryItems[currentIndex];
-      modalImg.src = item.src;
-      modalImg.alt = item.title;
-      caption.textContent = item.title;
+      modalImg.src = encodeMediaPath(item.src);
+      modalImg.alt = "";
+      caption.textContent = item.title || "";
     };
 
     const openModal = (link) => {
@@ -137,6 +145,10 @@
           });
         });
         const clickedSrc = getLightboxSrc(link);
+        galleryItems.sort((a, b) => {
+          const num = (src) => parseInt(src.match(/(\d+)/)?.[1] || "0", 10);
+          return num(a.src) - num(b.src);
+        });
         currentIndex = Math.max(
           0,
           galleryItems.findIndex((item) => item.src === clickedSrc)
@@ -212,12 +224,8 @@
         event.preventDefault();
         const src = trigger.dataset.video;
         if (!src) return;
-        const lang = document.body.getAttribute("data-lang") || "ru";
-        const titleRu = trigger.dataset.titleRu || "";
-        const titleEn = trigger.dataset.titleEn || "";
-        const title = lang === "en" && titleEn ? titleEn : titleRu;
-        video.src = src;
-        caption.textContent = title;
+        video.src = encodeMediaPath(src);
+        caption.textContent = "";
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
         video.play().catch(() => {});
@@ -281,9 +289,17 @@
   };
 
   const setupVideoPreviews = () => {
-    document.querySelectorAll(".reels-video-card video").forEach((video) => {
+    document.querySelectorAll(".reels-video-card").forEach((card) => {
+      const video = card.querySelector("video");
+      const src = card.dataset.video;
+      if (!video || !src) return;
+      const encoded = encodeMediaPath(src);
+      video.src = `${encoded}#t=0.1`;
+      video.load();
       video.addEventListener("loadeddata", () => {
-        video.currentTime = 0.1;
+        try {
+          video.currentTime = 0.1;
+        } catch (_) {}
       });
     });
   };
