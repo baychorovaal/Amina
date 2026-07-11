@@ -323,16 +323,74 @@
   const setupContactForm = () => {
     const form = document.querySelector(".contact-form");
     if (!form) return;
-    form.addEventListener("submit", (event) => {
+    const status = form.querySelector(".form-status");
+    const submitBtn = form.querySelector('[type="submit"]');
+
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const name = form.querySelector("#name")?.value.trim() || "";
-      const email = form.querySelector("#email")?.value.trim() || "";
-      const message = form.querySelector("#message")?.value.trim() || "";
-      const subject = encodeURIComponent(`LEDIPROVIZOR — сообщение от ${name || "клиента"}`);
-      const body = encodeURIComponent(
-        `Имя: ${name}\nEmail: ${email}\n\n${message}`
-      );
-      window.location.href = `mailto:lediprovizor@gmail.com?subject=${subject}&body=${body}`;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const lang = document.body.getAttribute("data-lang") || "ru";
+      const sendingText = lang === "en" ? "Sending…" : "Отправка…";
+      const successText =
+        lang === "en"
+          ? "Thank you! Your message has been sent."
+          : "Спасибо, ваше сообщение отправлено!";
+      const errorText =
+        lang === "en"
+          ? "Something went wrong. Please try again or email us at lediprovizor@gmail.com."
+          : "Не удалось отправить сообщение. Попробуйте ещё раз или напишите на lediprovizor@gmail.com.";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.sending = "true";
+        submitBtn.textContent = sendingText;
+      }
+      if (status) {
+        status.hidden = true;
+        status.className = "form-status";
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+          form.reset();
+          if (status) {
+            status.textContent = successText;
+            status.className = "form-status form-status-success";
+            status.hidden = false;
+          }
+        } else {
+          throw new Error(data.error || "Form submission failed");
+        }
+      } catch (_) {
+        if (status) {
+          status.textContent = errorText;
+          status.className = "form-status form-status-error";
+          status.hidden = false;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.dataset.sending = "false";
+          const label =
+            lang === "en"
+              ? submitBtn.getAttribute("data-en") || "Send"
+              : submitBtn.getAttribute("data-ru") || "Отправить";
+          submitBtn.textContent = label;
+        }
+      }
     });
   };
 
