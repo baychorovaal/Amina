@@ -55,6 +55,10 @@
       const collapse = lang === "en" ? toggle.getAttribute("data-en-collapse") : toggle.getAttribute("data-ru-collapse");
       if (expand) toggle.textContent = isOpen && collapse ? collapse : expand;
     });
+    document.querySelectorAll(".policy-lang-ru, .policy-lang-en").forEach((block) => {
+      const isEn = block.classList.contains("policy-lang-en");
+      block.hidden = lang === "en" ? !isEn : isEn;
+    });
     if (persist) {
       localStorage.setItem(LANG_KEY, lang);
     }
